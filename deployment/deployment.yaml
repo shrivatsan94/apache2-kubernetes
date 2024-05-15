@@ -4,7 +4,7 @@ metadata:
   name: apache-deployment
   namespace: apache2
 spec:
-  replicas: 4  # Number of desired replicas
+  replicas: 1  # Number of desired replicas
   revisionHistoryLimit: 5
   selector:
     matchLabels:
@@ -17,12 +17,12 @@ spec:
       containers:
         - name: apache
           image: 123038732324.dkr.ecr.eu-central-1.amazonaws.com/testapache2:4  # Apache HTTP Server Docker image
-          resources:
-            limits:
-              memory: 2500Mi
-              cpu: 1500m
-            requests:
-              memory: 2000Mi
-              cpu: 1000m
+#          resources:
+#            limits:
+#              memory: 2500Mi
+#              cpu: 1500m
+#            requests:
+#              memory: 2000Mi
+#              cpu: 1000m
           ports:
             - containerPort: 80  # Port Apache listens on
