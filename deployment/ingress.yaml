@@ -3,6 +3,13 @@ kind: Ingress
 metadata:
   name: apache-ingress
   namespace: apache2
+  annotations:
+    "alb.ingress.kubernetes.io/group.name": "bi-generic"
+    "alb.ingress.kubernetes.io/target-type": "ip"
+    "kubernetes.io/ingress.class": "alb"
+    "alb.ingress.kubernetes.io/listen-ports": "[{\"HTTP\":80}, {\"HTTPS\":443}]"
+    "alb.ingress.kubernetes.io/scheme": "internet-facing"
+    "alb.ingress.kubernetes.io/backend-protocol": "HTTP"
 spec:
   rules:
     - host: argo.bi.aws.picanova.net  # Replace with your domain name
