@@ -5,6 +5,7 @@ metadata:
   namespace: apache2
 spec:
   replicas: 1  # Number of desired replicas
+  revisionHistoryLimit: 5
   selector:
     matchLabels:
       app: apache
