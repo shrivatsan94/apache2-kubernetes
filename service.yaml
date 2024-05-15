@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: apache-service
+  namespace: apache2
+spec:
+  selector:
+    app: apache
+  ports:
+    - protocol: TCP
+      port: 80  # Port exposed by the service
+      targetPort: 80  # Port Apache listens on in the pods
